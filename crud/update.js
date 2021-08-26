@@ -1,4 +1,3 @@
-// No returning records by default
 const db = require("../db/models/index.js");
 const { Op } = require("sequelize");
 
