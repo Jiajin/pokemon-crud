@@ -5,7 +5,6 @@ const { Op } = require("sequelize");
 
 // };
 const updatePokemonsHpByLikeCategory = async (hp, category) => {
-  console.log("Hello im inside");
   const [numberOfAffectedRecords, updatedPokemons] =
     await db.SimplePokemon.update(
       { baseHp: hp },
@@ -14,7 +13,6 @@ const updatePokemonsHpByLikeCategory = async (hp, category) => {
         raw: true,
         where: {
           category: {
-            //   [Op.like]: "%" + category + "%",
             [Op.like]: `%${category}%`,
           },
         },

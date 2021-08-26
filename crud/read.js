@@ -3,6 +3,11 @@ const db = require("../db/models/index.js");
 
 const { Op } = require("sequelize");
 
+const findAllPokemon = async () => {
+  const foundPokemons = await db.SimplePokemon.findAll();
+  return foundPokemons;
+};
+
 const findPokemonsWithBaseHPGreaterThan = async (baseHP) => {
   //console.log("query1");
   const foundPokemons = await db.SimplePokemon.findAll({
@@ -36,6 +41,7 @@ const findPokemonWithNameOrBaseHP = async (name, baseHp) => {
 };
 
 module.exports = {
+  findAllPokemon,
   findPokemonsWithBaseHPGreaterThan,
   findPokemonWithNameOrBaseHP,
 };

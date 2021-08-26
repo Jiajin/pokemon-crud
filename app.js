@@ -25,4 +25,11 @@ app.get("/", (req, res) => {
 //setTimeout(() => Read.findPokemonsWithBaseHPGreaterThan(40), 500);
 //setTimeout(() => Read.findPokemonWithNameOrBaseHP("Pikachu", 59), 500);
 
+//Default error handler
+app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  console.log("App Router Error: " + err.statusCode + " " + err.message);
+  res.status(err.statusCode).send(err.message);
+});
+
 module.exports = app;
