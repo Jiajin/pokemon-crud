@@ -18,11 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: {
         type: DataTypes.STRING,
+        //unique:true
       },
       japaneseName: {
         type: DataTypes.STRING,
       },
-      baseHP: {
+      baseHp: {
         type: DataTypes.INTEGER,
       },
       category: {
@@ -40,7 +41,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "SimplePokemon",
+      //modelName: "SimplePokemon",//Cannot use this in conjunction with underscored:true
+      indexes: [
+        {
+          unique: true,
+          fields: ["name"],
+        },
+      ],
+      underscored: true,
     }
   );
   return SimplePokemon;
