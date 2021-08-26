@@ -38,14 +38,14 @@ const pokemons = [
   },
 ];
 
-describe("retrieve/read/find", () => {
+describe.skip("retrieve/read/find", () => {
   beforeAll(async () => {
     await db.sequelize.sync({ force: true });
     await PokemonModel.bulkCreate(pokemons);
   });
 
   afterAll(async () => {
-    //await PokemonModel.truncate();
+    await PokemonModel.truncate();
     await db.sequelize.close();
   });
 
@@ -62,7 +62,7 @@ describe("retrieve/read/find", () => {
     });
   });
 
-  describe("findPokemons", () => {
+  describe.skip("findPokemons", () => {
     describe.skip("findPokemonsByName", () => {
       it("should return a Pokemon", async () => {
         const retrieved = await findPokemonByName("Pikachu");

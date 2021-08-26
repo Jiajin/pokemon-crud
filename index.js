@@ -3,6 +3,7 @@ const db = require("./db/models/index.js"); // --> REPLACE THIS
 
 const createPikachu = require("./crud/create"); //  --> ADDED THIS
 const Read = require("./crud/read");
+const updatePokemonsHpByLikeCategory = require("./crud/update");
 
 // [1] Just test connection, we don't neeed this in actual. --> REMOVE THIS SECTION
 // [2] For dev exploration convenience, we forced synchronisation.
