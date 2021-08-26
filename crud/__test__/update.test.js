@@ -44,7 +44,7 @@ describe("retrieve/read/find", () => {
     it("should return 2 results when updating hp to 100 by Category Turtle ", async () => {
       let result = await updatePokemonsHpByLikeCategory(100, "Turtle");
       //console.log(result);
-      expect(result).toEqual([2]);
+      expect(result).toEqual(2);
     });
   });
 });
